@@ -39,7 +39,9 @@
     }
     self.sview.contentSize = CGSizeMake(totWidth,self.view.frame.size.height);
     self.sview.automaticallyAdjustsScrollIndicatorInsets = YES;
-
+    self.sview.pagingEnabled = YES;
+    
+    
     self.returnHome = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width-60, 90, 60, 30)];
     self.returnHome.backgroundColor = [UIColor whiteColor];
     [self.returnHome setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
