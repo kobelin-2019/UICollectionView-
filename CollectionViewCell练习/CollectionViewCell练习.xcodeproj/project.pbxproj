@@ -17,7 +17,6 @@
 		2EC514512390CA3A00CB51B7 /* CollectionViewCell__Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC514502390CA3A00CB51B7 /* CollectionViewCell__Tests.m */; };
 		2EC5145C2390CA3A00CB51B7 /* CollectionViewCell__UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC5145B2390CA3A00CB51B7 /* CollectionViewCell__UITests.m */; };
 		2EC514702390ECDB00CB51B7 /* myCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC5146F2390ECDB00CB51B7 /* myCollectionViewCell.m */; };
-		2EC51473239105C300CB51B7 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC51472239105C300CB51B7 /* PhotoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +57,6 @@
 		2EC5145D2390CA3A00CB51B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EC5146E2390ECDB00CB51B7 /* myCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myCollectionViewCell.h; sourceTree = "<group>"; };
 		2EC5146F2390ECDB00CB51B7 /* myCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myCollectionViewCell.m; sourceTree = "<group>"; };
-		2EC51471239105C300CB51B7 /* PhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
-		2EC51472239105C300CB51B7 /* PhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +120,6 @@
 				2EC514462390CA3A00CB51B7 /* main.m */,
 				2EC5146E2390ECDB00CB51B7 /* myCollectionViewCell.h */,
 				2EC5146F2390ECDB00CB51B7 /* myCollectionViewCell.m */,
-				2EC51471239105C300CB51B7 /* PhotoViewController.h */,
-				2EC51472239105C300CB51B7 /* PhotoViewController.m */,
 			);
 			path = "CollectionViewCell练习";
 			sourceTree = "<group>";
@@ -280,7 +275,6 @@
 				2EC514702390ECDB00CB51B7 /* myCollectionViewCell.m in Sources */,
 				2EC5143C2390CA3900CB51B7 /* ViewController.m in Sources */,
 				2EC514362390CA3900CB51B7 /* AppDelegate.m in Sources */,
-				2EC51473239105C300CB51B7 /* PhotoViewController.m in Sources */,
 				2EC514472390CA3A00CB51B7 /* main.m in Sources */,
 				2EC514392390CA3900CB51B7 /* SceneDelegate.m in Sources */,
 			);
@@ -452,7 +446,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 769Y4736HM;
 				INFOPLIST_FILE = "CollectionViewCell练习/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,7 +464,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 769Y4736HM;
 				INFOPLIST_FILE = "CollectionViewCell练习/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

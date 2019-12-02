@@ -14,6 +14,10 @@
 
 @property (nonatomic, strong) UICollectionView *mycollectionView;
 
+@property UIScrollView *sview;
+
+@property UIButton *returnHome;
+
 
 @end
 

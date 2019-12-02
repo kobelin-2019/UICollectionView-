@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "myCollectionViewCell.h"
-#import "PhotoViewController.h"
 #define fDeviceWidth ([UIScreen mainScreen].bounds.size.width)
 #define fDeviceHeight ([UIScreen mainScreen].bounds.size.height)
 
@@ -26,6 +25,36 @@
      self.cellArray = [imgArray mutableCopy];
     [self.view addSubview:self.mycollectionView];
     
+    self.sview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    NSInteger count = imgArray.count;
+    int totWidth = 0;
+    for(int i=0;i<count;i++)
+    {
+       UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(totWidth, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        UIImage *img = [UIImage imageNamed:_cellArray[i]];
+        imgView.image = img;
+        totWidth += self.view.frame.size.width;
+        imgView.contentMode = UIViewContentModeScaleAspectFit;
+        [self.sview addSubview:imgView];
+    }
+    self.sview.contentSize = CGSizeMake(totWidth,self.view.frame.size.height);
+    self.sview.automaticallyAdjustsScrollIndicatorInsets = YES;
+
+    self.returnHome = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width-60, 90, 60, 30)];
+    self.returnHome.backgroundColor = [UIColor whiteColor];
+    [self.returnHome setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [self.returnHome setTitle:@"返回" forState:UIControlStateNormal];
+    [self.returnHome addTarget:self action:@selector(goHome) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.sview.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.sview];
+    
+    [self.view addSubview:self.returnHome];
+
+    self.sview.hidden = YES;
+    self.returnHome.hidden = YES;
+
+
 }
 
 #pragma mark about CollectionView
@@ -97,21 +126,23 @@
 #pragma mark UICollectionViewCell被选中时调用的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"being touched");
-    PhotoViewController* vc2 = [[PhotoViewController alloc] init];
-    [vc2.view setBackgroundColor:[UIColor whiteColor]];
-    vc2.currentPhoto.image = [UIImage imageNamed:_cellArray[indexPath.item]];
-    //[self presentViewController:vc2 animated:YES completion:nil];
-    
-    [self.navigationController pushViewController:vc2 animated:YES];
+    self.sview.contentOffset = CGPointMake((indexPath.item)*(self.view.frame.size.width) ,0);
+    self.mycollectionView.hidden = YES;
+    self.returnHome.hidden = NO;
+    self.sview.hidden = NO;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-
+-(void)goHome
+{
+    self.sview.hidden = YES;
+    self.returnHome.hidden = YES;
+    self.mycollectionView.hidden = NO;
+}
 
 
 @end    
